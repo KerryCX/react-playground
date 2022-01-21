@@ -15,7 +15,6 @@ const [newData, setData] = useState([])
         })
         .then(data => {
             setData(data)
-            console.log(newData)
         })
         .catch(error => {
             console.log(error)
@@ -23,12 +22,17 @@ const [newData, setData] = useState([])
 
 useEffect(()=>{
     fetchData();
-    console.log(newData[0]);
+
 },[]);
 
     return(
         <div>
-            <h1>1</h1>
+            <h3>Here is a list from a .json file, using fetch in a component</h3>
+            {newData.map((data,index)=>(
+                <div key={index}>
+                    <p>{data.activity}</p>
+                </div>
+            ))}
         </div>
     );
 }
