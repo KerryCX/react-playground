@@ -1,4 +1,15 @@
 .App {
   text-align: center;
+  background-color: #a4036f;
+  color:#efea5a;
+  height: 100vh;
+  /*Colours chose from coolors.co
+  a4036f
+  048ba8
+  16db93
+  efea5a
+  f29e4c
+  */
 }
+
 
