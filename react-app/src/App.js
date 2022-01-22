@@ -2,7 +2,8 @@
 import './App.css';
 import {ExampleFunctionalComponent} from './components/ExampleComponent';
 import {Activities} from './components/Activities';
-import {GetStarWarsDataAA, GetDataPromiseClass, GetActivitiesAA} from "./components/GetDataAA";
+import {GetActivitiesAA} from "./components/GetDataAA";
+import {StarWars} from "./components/StarWars";
 
 
 function App() {
@@ -15,10 +16,7 @@ function App() {
         <ExampleFunctionalComponent
         x={"this works"}/>
         <Activities/>
-        <GetDataPromiseClass/>
-        <GetStarWarsDataAA/>
-        <GetActivitiesAA/>
-
+        <StarWars/>
     </div>
   );
 }

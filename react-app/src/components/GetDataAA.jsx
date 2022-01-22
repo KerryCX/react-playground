@@ -20,14 +20,6 @@ export const GetStarWarsDataAA = () => {
     );
 }
 
-export const GetActivitiesAA = () => {
-    getActivities()
-    return(
-        <div>Fetching Activities data using Async/Await</div>
-    );
-}
-
-
 const getStarWarsPerson = async () => {
     try {
         const response = await fetch('https://swapi.dev/api/people/2/')
@@ -36,6 +28,13 @@ const getStarWarsPerson = async () => {
     } catch (e) {
         console.warn(e)
     }
+}
+
+export const GetActivitiesAA = () => {
+    getActivities()
+    return(
+        <div>Fetching Activities data using Async/Await</div>
+    );
 }
 
 const getActivities = async () => {
