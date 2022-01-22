@@ -2,10 +2,11 @@
 import './App.css';
 import {ExampleFunctionalComponent} from './components/ExampleComponent';
 import {Activities} from './components/Activities';
-import {GetData2, GetDataAA, GetDataCompare, GetDataPromiseClass} from "./components/GetDataAA";
+import {StarWars} from "./components/StarWars";
 
 
 function App() {
+    console.log(exp(2))
   return (
     <div className="App">
       <h1>Hello World!</h1>
@@ -15,8 +16,7 @@ function App() {
         <ExampleFunctionalComponent
         x={"this works"}/>
         <Activities/>
-        <GetDataAA/>
-        <GetDataPromiseClass/>
+        <StarWars/>
     </div>
   );
 }
@@ -33,4 +33,13 @@ function Example(props){
       </>
   );
 
+}
+
+function exp (){
+    let me = oi(1)
+    return me;
+}
+
+function oi (a){
+    return a+1;
 }

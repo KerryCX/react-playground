@@ -1,3 +1,5 @@
+import {useEffect, useState} from "react";
+
 export const GetDataPromiseClass = () => {
     fetch(
         'https://swapi.dev/api/people/1/'
@@ -9,20 +11,19 @@ export const GetDataPromiseClass = () => {
         console.warn(e)
     })
     return(
-        <div>hello world, fetching data using the Promise class</div>
+        <div>Fetching Star Wars data using the Promise class</div>
     );
 }
 
-export const GetDataAA = () => {
-    logPerson()
-    getActivities()
+export const GetStarWarsDataAA = () => {
+    const promise = getStarWarsPerson()
+    console.log({promise})
     return(
-        <div>hello world, fetching data using Async/Await</div>
+        <div>Fetching Star Wars data using Async/Await</div>
     );
 }
 
-
-const logPerson = async () => {
+const getStarWarsPerson = async () => {
     try {
         const response = await fetch('https://swapi.dev/api/people/2/')
         const data = await response.json()
@@ -30,6 +31,15 @@ const logPerson = async () => {
     } catch (e) {
         console.warn(e)
     }
+}
+
+
+export const GetActivitiesAA = () => {
+    const promise = getActivities()
+    console.log(promise)
+    return(
+        <div>Fetching Activities data using Async/Await</div>
+    );
 }
 
 const getActivities = async () => {
@@ -40,4 +50,33 @@ const getActivities = async () => {
     } catch (e) {
         console.warn(e)
     }
+}
+
+export const GetActivitiesPutToScreen = () => {
+    const [newData, setData] = useState([])
+    const getA = async () => {
+        try {
+            const response = await fetch('data.json')
+            setData(await response.json())
+            console.log("the new data is here"+newData)
+        } catch (e) {
+            console.warn(e)
+        }
+    }
+    useEffect(()=> {
+        const promise = getA();
+        console.log(promise)
+        },[]);
+
+    return(
+        <div>
+            <h3>Here is a list from a .json file, using fetch with async/await in a component</h3>
+            {newData.map((data,index)=>(
+                <div key={index}>
+                    <p>{data.activity}</p>
+                </div>
+            ))}
+            <div>Fetching Activities data using Async/Await and putting to screen</div>
+        </div>
+    );
 }

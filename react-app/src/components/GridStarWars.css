@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+.star-wars-container{
+    background-color: #040472FF;
+    color: #efea5a;
+    height: auto;
+    border: 5rem #a4036f solid;
+}
+
+.grid-container{
+    box-sizing: border-box;
+    height: auto;
+    justify-content: center;
+    display: flex;
+}
+
+.grid-box{
+    display: grid;
+    justify-content: space-evenly;
+    gap: 5rem 0;
+    grid-template-areas:
+    "a a b b"
+    "c d d e"
+    "f g h h";
+    align-items: center;
+    width: 80%;
+    font-size: 1.2rem;
+}
+
+.grid-items{
+    padding: 2rem;
+    border: 3rem solid #a4036f;
+    width: auto;
+    height: 250px;
+    background-color: #048ba8;
+    color: #efea5a;
+    overflow-wrap: break-word;
+}
+
+.title{
+    color: #040472FF;
+}
+.item1 {
+    grid-area: a;
+}
+.item2 {
+    grid-area: b;
+}
+.item3 {
+    grid-area: c;
+}
+.item4 {
+    grid-area: d;
+}
+.item5 {
+    grid-area: e;
+}
+.item6 {
+    grid-area: f;
+}
+.item7 {
+    grid-area: g;
+}
+.item8 {
+    grid-area: h;
+}
+

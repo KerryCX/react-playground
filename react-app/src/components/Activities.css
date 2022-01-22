@@ -1,3 +1,14 @@
-.activities-container{
-    background-color: #048ba8;
+*{
+    box-sizing: border-box;
 }
+
+.activities-container{
+    display: flex;
+    justify-content: center;
+}
+.activities-grid-container{
+    background-color: #048ba8;
+    width: 50vw;
+}
+
+
