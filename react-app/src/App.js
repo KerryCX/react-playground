@@ -9,8 +9,15 @@ function App() {
     console.log(exp(2))
   return (
     <div className="App">
-      <h1>Hello World!</h1>
-      <p>You can simply have code in App.js in a paragraph like here but also</p>
+        <h1>Hello World!</h1>
+        <button className="button-style" onClick={()=>{
+            console.log(exp(2))
+        }
+
+        }>Click to multiply by 2</button>
+
+        <input placeholder="enter number">{}</input>
+        <p>You can simply have code in App.js in a paragraph like here but also</p>
         <Example
         x={"gosh"}/>
         <ExampleFunctionalComponent
@@ -32,14 +39,8 @@ function Example(props){
         </p>
       </>
   );
-
 }
 
-function exp (){
-    let me = oi(1)
-    return me;
-}
-
-function oi (a){
-    return a+1;
+function exp (a){
+    return (a * 2);
 }
