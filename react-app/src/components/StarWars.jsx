@@ -4,9 +4,9 @@ import {GetStarWarsData} from "./GridStarWars";
 export const StarWars = () => {
     return(
         <section>
-            <GetDataPromiseClass/>
-            <GetStarWarsDataAA/>
-            <GetStarWarsData/>
+            <GetDataPromiseClass />
+            <GetStarWarsDataAA />
+            <GetStarWarsData />
         </section>
     );
 }

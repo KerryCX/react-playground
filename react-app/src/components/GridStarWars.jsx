@@ -18,26 +18,21 @@ export const GetStarWarsData = () => {
     },[]);
 
     return(
-        <div className="grid-container">
-            <h3>Here is a list from Star Wars API, using fetch with async/await in a component</h3>
-            <div>{ newData.name }</div>
-            <div>{ newData.index}</div>
-            <div>{ newData.eye_color}</div>
-            <div>{ newData.skin_color}</div>
-            <div>{ newData.height}</div>
-            <div>{ newData.homeworld}</div>
-            <div>
-
+        <div className="star-wars-container">
+            <h1>Here is a list from Star Wars API, using fetch with async/await in a component</h1>
+            <div className="grid-container">
+                <div className="grid-box">
+                    <div className="item1 grid-items">{ newData.name }</div>
+                    <div className="item2 grid-items">{ newData.birth_year}</div>
+                    <div className="item3 grid-items">{ newData.eye_color}</div>
+                    <div className="item4 grid-items">{ newData.skin_color}</div>
+                    <div className="item5 grid-items">{ newData.height}</div>
+                    <div className="item6 grid-items">{ newData.homeworld}</div>
+                    <div className="item7 grid-items">{ newData.mass}</div>
+                    <div className="item8 grid-items">{ newData.gender}</div>
+                </div>
             </div>
             <div>Fetching star wars data using Async/Await and putting to screen</div>
         </div>
-        /*<div>
-
-            {newData.map((data,index)=>(
-                <div key={index}>
-                    <p>{data.activity}</p>
-                </div>
-            ))}
-        </div>          */
     );
 }
