@@ -3,19 +3,14 @@ import './App.css';
 import {ExampleFunctionalComponent} from './components/ExampleComponent';
 import {Activities} from './components/Activities';
 import {StarWars} from "./components/StarWars";
+import {Button} from "./components/Button";
 
 
 function App() {
-    console.log(exp(2))
   return (
     <div className="App">
         <h1>Hello World!</h1>
-        <button className="button-style" onClick={()=>{
-            console.log(exp(2))
-        }
-
-        }>Click to multiply by 2</button>
-
+        <Button/>
         <input placeholder="enter number">{}</input>
         <p>You can simply have code in App.js in a paragraph like here but also</p>
         <Example
@@ -41,6 +36,3 @@ function Example(props){
   );
 }
 
-function exp (a){
-    return (a * 2);
-}
