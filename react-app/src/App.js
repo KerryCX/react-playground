@@ -1,7 +1,7 @@
 
 import './App.css';
-import {ExampleFunctionalComponent} from "./components/ExampleComponent";
-import {GetData} from "./components/GetData";
+import {ExampleFunctionalComponent} from './components/ExampleComponent';
+import {Activities} from './components/Activities';
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
         x={"gosh"}/>
         <ExampleFunctionalComponent
         x={"this works"}/>
-        <GetData/>
+        <Activities/>
     </div>
   );
 }

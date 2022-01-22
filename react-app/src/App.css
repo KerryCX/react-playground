@@ -3,13 +3,26 @@
   background-color: #a4036f;
   color:#efea5a;
   height: 100vh;
-  /*Colours chose from coolors.co
-  a4036f
-  048ba8
-  16db93
-  efea5a
-  f29e4c
-  */
+}
+
+.colour1{
+  background-color: #a4036f;
+}
+
+.colour2{
+  background-color: #048ba8;
+}
+
+.colour3{
+  background-color: #16db93;
+}
+
+.colour4{
+  background-color: #efea5a;
+}
+
+.colour5{
+  background-color: #f29e4c;
 }
 
 
