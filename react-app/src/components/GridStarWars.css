@@ -3,7 +3,7 @@
 }
 
 .star-wars-container{
-    background-color:darkblue;
+    background-color: #040472FF;
     color: #efea5a;
     height: auto;
     border: 5rem #a4036f solid;
@@ -19,23 +19,28 @@
 .grid-box{
     display: grid;
     justify-content: space-evenly;
-    gap: 10px;
+    gap: 5rem 0;
     grid-template-areas:
-    "a b c d"
-    "e f g h";
+    "a a b b"
+    "c d d e"
+    "f g h h";
     align-items: center;
-    width: 50%;
-    font-size: large;
+    width: 80%;
+    font-size: 1.2rem;
 }
 
 .grid-items{
     padding: 2rem;
     border: 3rem solid #a4036f;
-    width: 250px;
+    width: auto;
     height: 250px;
     background-color: #048ba8;
     color: #efea5a;
     overflow-wrap: break-word;
+}
+
+.title{
+    color: #040472FF;
 }
 .item1 {
     grid-area: a;
