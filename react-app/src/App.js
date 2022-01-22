@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {ExampleFunctionalComponent} from './components/ExampleComponent';
+import {Activities} from './components/Activities';
+import {GetData2, GetDataAA, GetDataCompare, GetDataPromiseClass} from "./components/GetDataAA";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World!</h1>
+      <p>You can simply have code in App.js in a paragraph like here but also</p>
+        <Example
+        x={"gosh"}/>
+        <ExampleFunctionalComponent
+        x={"this works"}/>
+        <Activities/>
+        <GetDataAA/>
+        <GetDataPromiseClass/>
     </div>
   );
 }
 
 export default App;
+
+function Example(props){
+  return(
+      <>
+        <p>
+          call a function, with a prop in the App.js, to put a paragraph on screen.
+          <br/>Simply showing how props will be shown here, props.x is: {props.x}
+        </p>
+      </>
+  );
+
+}
