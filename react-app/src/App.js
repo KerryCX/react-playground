@@ -2,6 +2,7 @@
 import './App.css';
 import {ExampleFunctionalComponent} from './components/ExampleComponent';
 import {Activities} from './components/Activities';
+import {GetData2, GetDataAA, GetDataCompare, GetDataPromiseClass} from "./components/GetDataAA";
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
         <ExampleFunctionalComponent
         x={"this works"}/>
         <Activities/>
+        <GetDataAA/>
+        <GetDataPromiseClass/>
     </div>
   );
 }
