@@ -1,11 +1,10 @@
-import {GetDataPromiseClass, GetStarWarsDataAA, GetStarWarsDataAARevise} from "./GetDataAA";
+import {GetDataPromiseClass, GetStarWarsDataAA} from "./GetDataAA";
 
 export const StarWars = () => {
     return(
         <section>
             <GetDataPromiseClass/>
             <GetStarWarsDataAA/>
-            <GetStarWarsDataAARevise/>
         </section>
     );
 }

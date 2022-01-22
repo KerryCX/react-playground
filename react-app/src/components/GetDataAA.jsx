@@ -23,16 +23,6 @@ export const GetStarWarsDataAA = () => {
     );
 }
 
-export const GetStarWarsDataAARevise = () => {
-        const promise = getStarWarsPerson()
-        console.log(promise)
-        return(
-            <div>Fetching Star Wars data using Async/Await</div>
-        );
-}
-
-
-
 const getStarWarsPerson = async () => {
     try {
         const response = await fetch('https://swapi.dev/api/people/2/')
@@ -62,7 +52,7 @@ const getActivities = async () => {
     }
 }
 
-export const GetActivitiesPuttoScreen = () => {
+export const GetActivitiesPutToScreen = () => {
     const [newData, setData] = useState([])
     const getA = async () => {
         try {
