@@ -1,3 +1,5 @@
+import {useEffect, useState} from "react";
+
 export const GetDataPromiseClass = () => {
     fetch(
         'https://swapi.dev/api/people/1/'
@@ -14,11 +16,22 @@ export const GetDataPromiseClass = () => {
 }
 
 export const GetStarWarsDataAA = () => {
-    getStarWarsPerson()
+    const promise = getStarWarsPerson()
+    console.log({promise})
     return(
         <div>Fetching Star Wars data using Async/Await</div>
     );
 }
+
+export const GetStarWarsDataAARevise = () => {
+        const promise = getStarWarsPerson()
+        console.log(promise)
+        return(
+            <div>Fetching Star Wars data using Async/Await</div>
+        );
+}
+
+
 
 const getStarWarsPerson = async () => {
     try {
@@ -30,8 +43,10 @@ const getStarWarsPerson = async () => {
     }
 }
 
+
 export const GetActivitiesAA = () => {
-    getActivities()
+    const promise = getActivities()
+    console.log(promise)
     return(
         <div>Fetching Activities data using Async/Await</div>
     );
@@ -45,4 +60,33 @@ const getActivities = async () => {
     } catch (e) {
         console.warn(e)
     }
+}
+
+export const GetActivitiesPuttoScreen = () => {
+    const [newData, setData] = useState([])
+    const getA = async () => {
+        try {
+            const response = await fetch('data.json')
+            setData(await response.json())
+            console.log("the new data is here"+newData)
+        } catch (e) {
+            console.warn(e)
+        }
+    }
+    useEffect(()=> {
+        const promise = getA();
+        console.log(promise)
+        },[]);
+
+    return(
+        <div>
+            <h3>Here is a list from a .json file, using fetch with async/await in a component</h3>
+            {newData.map((data,index)=>(
+                <div key={index}>
+                    <p>{data.activity}</p>
+                </div>
+            ))}
+            <div>Fetching Activities data using Async/Await and putting to screen</div>
+        </div>
+    );
 }
