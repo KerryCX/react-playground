@@ -34,20 +34,18 @@ const getStarWarsPerson = async () => {
 
 
 export const GetActivitiesAA = () => {
-    getActivities()
+    useEffect(async ()=> {
+        try {
+            const response = await fetch('data.json')
+            const data = await response.json()
+            console.log(data)
+        } catch (e) {
+            console.warn(e)
+        }
+    },[]);
     return(
         <div>Fetching Activities data using Async/Await</div>
     );
-}
-
-const getActivities = async () => {
-    try {
-        const response = await fetch('data.json')
-        const data = await response.json()
-        console.log(data)
-    } catch (e) {
-        console.warn(e)
-    }
 }
 
 export const GetActivitiesPutToScreen = () => {
