@@ -3,7 +3,7 @@ import './GridStarWars.css';
 
 export const GetStarWarsData = () => {
     const [newData, setData] = useState([])
-    const FetchStarWarsData = async () => {
+    useEffect(async ()=> {
         try {
             const response = await fetch('https://swapi.dev/api/people/2/')
             setData(await response.json())
@@ -11,10 +11,6 @@ export const GetStarWarsData = () => {
         } catch (e) {
             console.warn(e)
         }
-    }
-    useEffect(()=> {
-        const promise = FetchStarWarsData();
-        console.log(promise)
     },[]);
 
     return(
