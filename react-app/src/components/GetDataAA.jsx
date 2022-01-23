@@ -16,8 +16,7 @@ export const GetDataPromiseClass = () => {
 }
 
 export const GetStarWarsDataAA = () => {
-    const promise = getStarWarsPerson()
-    console.log({promise})
+    getStarWarsPerson()
     return(
         <div>Fetching Star Wars data using Async/Await</div>
     );
@@ -35,8 +34,7 @@ const getStarWarsPerson = async () => {
 
 
 export const GetActivitiesAA = () => {
-    const promise = getActivities()
-    console.log(promise)
+    getActivities()
     return(
         <div>Fetching Activities data using Async/Await</div>
     );
@@ -51,7 +49,7 @@ const getActivities = async () => {
         console.warn(e)
     }
 }
-
+/*
 export const GetActivitiesPutToScreen = () => {
     const [newData, setData] = useState([])
     const getA = async () => {
@@ -64,9 +62,33 @@ export const GetActivitiesPutToScreen = () => {
         }
     }
     useEffect(()=> {
-        const promise = getA();
-        console.log(promise)
-        },[]);
+        getA();
+    },[]);
+
+    return(
+        <div>
+            <h3>Here is a list from a .json file, using fetch with async/await in a component</h3>
+            {newData.map((data,index)=>(
+                <div key={index}>
+                    <p>{data.activity}</p>
+                </div>
+            ))}
+            <div>Fetching Activities data using Async/Await and putting to screen</div>
+        </div>
+    );
+}*/
+
+export const GetActivitiesPutToScreen = () => {
+    const [newData, setData] = useState([])
+    useEffect(async ()=> {
+        try {
+            const response = await fetch('data.json')
+            setData(await response.json())
+            console.log("the new data is here"+newData)
+        } catch (e) {
+            console.warn(e)
+        }
+    },[]);
 
     return(
         <div>
