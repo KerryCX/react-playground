@@ -16,45 +16,38 @@ export const GetDataPromiseClass = () => {
 }
 
 export const GetStarWarsDataAA = () => {
-    const promise = getStarWarsPerson()
-    console.log({promise})
+    useEffect(async () => {
+        try {
+            const response = await fetch('https://swapi.dev/api/people/2/')
+            const data = await response.json()
+            console.log(data)
+        } catch (e) {
+            console.warn(e)
+        }
+    },[]);
     return(
         <div>Fetching Star Wars data using Async/Await</div>
     );
 }
 
-const getStarWarsPerson = async () => {
-    try {
-        const response = await fetch('https://swapi.dev/api/people/2/')
-        const data = await response.json()
-        console.log(data)
-    } catch (e) {
-        console.warn(e)
-    }
-}
-
-
 export const GetActivitiesAA = () => {
-    const promise = getActivities()
-    console.log(promise)
+    useEffect(async ()=> {
+        try {
+            const response = await fetch('data.json')
+            const data = await response.json()
+            console.log(data)
+        } catch (e) {
+            console.warn(e)
+        }
+    },[]);
     return(
         <div>Fetching Activities data using Async/Await</div>
     );
 }
 
-const getActivities = async () => {
-    try {
-        const response = await fetch('data.json')
-        const data = await response.json()
-        console.log(data)
-    } catch (e) {
-        console.warn(e)
-    }
-}
-
 export const GetActivitiesPutToScreen = () => {
     const [newData, setData] = useState([])
-    const getA = async () => {
+    useEffect(async ()=> {
         try {
             const response = await fetch('data.json')
             setData(await response.json())
@@ -62,11 +55,7 @@ export const GetActivitiesPutToScreen = () => {
         } catch (e) {
             console.warn(e)
         }
-    }
-    useEffect(()=> {
-        const promise = getA();
-        console.log(promise)
-        },[]);
+    },[]);
 
     return(
         <div>
